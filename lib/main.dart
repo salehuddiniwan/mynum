@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'screens/home_shell.dart';
 import 'theme/brand.dart';
 import 'widgets/adaptive_frame.dart';
+import 'widgets/pointer_tracker.dart';
 
 void main() {
   runApp(const MynumApp());
@@ -17,7 +18,9 @@ class MynumApp extends StatelessWidget {
       title: 'MYNUM',
       debugShowCheckedModeBanner: false,
       theme: Brand.theme(),
-      builder: (context, child) => AdaptiveFrame(child: child!),
+      // PointerTracker lets every buddy's eyes follow your finger.
+      builder: (context, child) =>
+          PointerTracker(child: AdaptiveFrame(child: child!)),
       home: const HomeShell(),
     );
   }
